@@ -3,6 +3,7 @@ const app =express();
 const bodyParser =require('body-parser')
 const expressLayouts = require("express-ejs-layouts");
 const static = require("./routes/static");
+const controllerRoute =require("./controllers/controller");
 
 
 /* ***********************
@@ -13,9 +14,7 @@ app.use(expressLayouts);
 app.set("layout", "./layouts/layout"); // not at views root
  
 
-app.get("/", function(req,res){
-    res.render("index",{title: "Home"})
-  })
+app.get("/",controllerRoute)
 // bodyParser  added here.
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
