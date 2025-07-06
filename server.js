@@ -1,5 +1,4 @@
 const express =require('express');
-const env = require("dotenv").config();
 const app =express();
 const bodyParser =require('body-parser')
 const expressLayouts = require("express-ejs-layouts");
@@ -25,9 +24,6 @@ app.use(express.static('public'));
 app.use(static);
 
 
-const port = process.env.PORT;
-const host = process.env.HOST;
-
-app.listen(port, () => {
-  console.log(`app listening on ${host}:${port}`);
+app.listen(process.env.PORT || 4000, () => {
+  console.log('Web Server is listening at port ' + (process.env.PORT || 4000));
 });
