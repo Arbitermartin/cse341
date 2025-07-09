@@ -5,8 +5,8 @@ require ('dotenv').config();
 const dburl =process.env.MONGODB_URL;
 
 mongoose.connect(dburl,{
-   useNewUrlParser:true,
-   useUnifiedTopology: true
+  //  useNewUrlParser:true,
+  //  useUnifiedTopology: true
 })
 
 .then(() => console.log('✅ MongoDB connected successfully.'))
