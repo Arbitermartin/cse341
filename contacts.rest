@@ -1,0 +1,22 @@
+# GET all contacts
+GET http://localhost:8080/contacts
+Content-Type: application/json
+
+###
+
+# GET single contact by ID (replace <contact-id> with an actual ID from your MongoDB)
+GET http://localhost:8080/contacts/<686ebe7cd27f1b858b97645d>
+Content-Type: application/json
+
+
+# render 
+# GET all contacts on Render
+GET https://cse341-idt0.onrender.com//contacts
+Content-Type: application/json
+
+###
+
+# GET single contact by ID on Render
+GET https://cse341-idt0.onrender.com//contacts/<686ebe7cd27f1b858b97645d>
+Content-Type: application/json
+
