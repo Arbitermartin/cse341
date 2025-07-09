@@ -1,8 +1,10 @@
 const express =require('express');
 const app =express();
+require('./database/connection');
 const bodyParser =require('body-parser')
 const expressLayouts = require("express-ejs-layouts");
 const static = require("./routes/static");
+
 const controllerRoute =require("./controllers/controller");
 
 
@@ -23,7 +25,12 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'));
 app.use(static);
 
+// database
+app.use(express.json());
+app.use('/contacts', require('./routes/contacts'));
 
-app.listen(process.env.PORT || 4000, () => {
-  console.log('Web Server is listening at port ' + (process.env.PORT || 4000));
+
+
+app.listen(process.env.PORT || 8080, () => {
+  console.log('Web Server is listening at port ' + (process.env.PORT || 8080));
 });
