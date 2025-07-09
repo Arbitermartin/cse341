@@ -3,8 +3,8 @@ const router = express.Router();
 const { MongoClient, ObjectId } = require('mongodb');
 require('dotenv').config();
 
-const url = process.env.MONGODB_URL;
-const client = new MongoClient(url);
+const uri = process.env.MONGODB_URI;
+const client = new MongoClient(uri);
 
 // GET all contacts
 router.get('/', async (req, res) => {
